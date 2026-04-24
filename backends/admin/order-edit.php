@@ -1,0 +1,29 @@
+<?php
+session_start();
+try {
+    if (!file_exists('../connection-pdo.php' )) throw new Exception();
+    else require_once('../connection-pdo.php' ); 
+} catch (Exception $e) {
+	$_SESSION['msg'] = 'Server Error!';
+	header('location: ../../admin/order-list.php');
+	exit();
+}
+if (!isset($_POST['order_id'])) {
+	header('location: ../../admin/order-list.php');
+	exit();
+}
+$id = $_POST['order_id'];
+$customer_id = $_POST['customer_id'];
+$product_id = $_POST['product_id'];
+$quantity = $_POST['quantity'];
+$total_price = $_POST['total_price'];
+$order_status = $_POST['order_status'];
+
+$sql = "UPDATE orders SET customer_id=?, product_id=?, quantity=?, total_price=?, order_status=? WHERE order_id=?";
+$query  = $pdoconn->prepare($sql);
+if ($query->execute([$customer_id, $product_id, $quantity, $total_price, $order_status, $id])) {
+    $_SESSION['msg'] = 'Order Updated!';
+} else {
+    $_SESSION['msg'] = 'Error updating order!';
+}
+header('location: ../../admin/order-list.php');

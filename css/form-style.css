@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --dark-green: #0a3d31;
+  --mid-green: #1a5c4d;
+  --light-green: #2e7d32;
+  --cream: #f9f7f2;
+  --white: #ffffff;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+body {
+  background: var(--cream);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Sidebar Styling - Modern Desktop Fix */
+.left-sidebar {
+  height: 100vh;
+  background: var(--dark-green) !important;
+  position: sticky;
+  top: 0;
+  padding: 0 !important;
+  z-index: 1000;
+}
+
+.brand-logo {
+  padding: 30px 20px;
+  background: rgba(0,0,0,0.1);
+}
+
+.heading-name {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.nav-sidebar {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  padding: 0 !important;
+  margin: 4px 12px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+}
+
+.list-group-item a {
+  padding: 14px 20px !important;
+  color: rgba(255,255,255,0.7) !important;
+  display: flex !important;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.list-group-item a i {
+  margin-right: 12px !important;
+  font-size: 20px !important;
+}
+
+.list-group-item:hover {
+  background: rgba(255,255,255,0.1) !important;
+}
+
+.list-group-item:hover a {
+  color: var(--white) !important;
+}
+
+.list-group-item.active {
+  background: var(--light-green) !important;
+}
+
+.list-group-item.active a {
+  color: var(--white) !important;
+}
+
+/* Content Area */
+.main-content-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  height: 70px;
+  line-height: 70px;
+  box-shadow: 0 1px 0 var(--border) !important;
+  background: var(--white) !important;
+}
+
+.main-section {
+  padding: 30px;
+  flex-grow: 1;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-header h4 {
+  font-weight: 700;
+  color: var(--dark-green);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Modern Card Style */
+.data-card {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+/* Dashboard Cards */
+.dash-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 30px 20px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.dash-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+  border-color: var(--light-green);
+}
+
+.dash-card i {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.dash-card .card-title {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Table Styling */
+table {
+  background: var(--white);
+  border-radius: 8px;
+}
+
+thead {
+  background: #f8fafc;
+}
+
+th {
+  color: var(--text-light) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 16px !important;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Buttons */
+.btn, .btn-small {
+  text-transform: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+
+.green-btn {
+  background-color: var(--mid-green) !important;
+}
+
+/* Mobile Sidenav */
+.sidenav .user-view {
+  margin-bottom: 0 !important;
+}
+
+@media only screen and (max-width: 992px) {
+  .left-sidebar {
+    display: none;
+  }
+}
